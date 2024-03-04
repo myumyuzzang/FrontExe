@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+        .navi{
+            width: 960px;
+            height: 60px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+        .navi ul{
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        .navi ul li{
+            float: left;
+            width: 150px;
+            padding: 10px;
+        }
+        /*
+        :link - 방문하지 않은 링크 스타일 적용
+        :visited - 방문한 링크 스타일 적용
+        :hover - 마우스 위에 있을 때 스타일 적용
+        :active - 활성화, 즉 클릭했을 때
+        :focus - 초점이 맞추어졌을 때
+
+        순서는 다음과 같이 정의한다.
+        순서가 바뀌면 스타일이 제대로 적용되지 않는다
+        LoVe HAte
+        :link, :visited, :hover. :active
+        */
+        .navi a:link, .navi a:visited{
+            display: block;
+            font-size: 14px;
+            color: #000;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navi a:hover, .navi a:focus {
+            background-color: #222;
+            color: #fff;
+        }
+        .navi a:active{
+            background-color: #f00;
+        }
+        .contents{
+            margin: 30px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #222;
+            border-radius: 5px;
+        }
+        /* 해당 id로 링크했을 때 스타일 변경하고 싶을 때*/
+        #intro:target{
+            background-color: #0069e0;
+            color: #fff;
+        }
+        #room:target{
+            background-color: #ff9844;
+        }
+        #reservation:target{
+            background-color: #fff8dc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navi">
+            <ul>
+                <li><a href="#intro">이용 안내</a></li>
+                <li><a href="#room">객실 소개</a></li>
+                <li><a href="#reservation">예약 방법 및 요금</a></li>
+                <li><a href="#79_ps.2.html">예약하기</a></li>
+            </ul>
+        </nav>
+        <div id="intro" class="contents">
+            <h2>이용 안내</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non tellus orci ac auctor augue mauris augue. Elementum nisi quis eleifend quam adipiscing. Massa massa ultricies mi quis hendrerit. Proin sagittis nisl rhoncus mattis rhoncus. Tellus rutrum tellus pellentesque eu. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Tellus integer feugiat scelerisque varius morbi enim. Pretium lectus quam id leo in vitae turpis massa. Vivamus arcu felis bibendum ut. Arcu felis bibendum ut tristique et egestas quis. Nam aliquam sem et tortor consequat id porta. Massa vitae tortor condimentum lacinia quis vel eros. Amet justo donec enim diam vulputate ut pharetra sit amet. Tortor at risus viverra adipiscing at in tellus. In vitae turpis massa sed elementum tempus egestas. Lobortis mattis aliquam faucibus purus. Dolor sed viverra ipsum nunc aliquet bibendum enim.Quam viverra orci sagittis eu volutpat odio. Dui nunc mattis enim ut tellus elementum sagittis vitae. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Egestas dui id ornare arcu. Nibh sed pulvinar proin gravida hendrerit. Convallis posuere morbi leo urna molestie at elementum eu. Molestie at elementum eu facilisis sed. Bibendum ut tristique et egestas. Nunc sed blandit libero volutpat sed cras ornare arcu. Elit pellentesque habitant morbi tristique senectus et netus. Purus sit amet luctus venenatis lectus magna fringilla.</p>
+        </div>
+        <div id="room" class="contents">
+            <h2>객실 소개</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non tellus orci ac auctor augue mauris augue. Elementum nisi quis eleifend quam adipiscing. Massa massa ultricies mi quis hendrerit. Proin sagittis nisl rhoncus mattis rhoncus. Tellus rutrum tellus pellentesque eu. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Tellus integer feugiat scelerisque varius morbi enim. Pretium lectus quam id leo in vitae turpis massa. Vivamus arcu felis bibendum ut. Arcu felis bibendum ut tristique et egestas quis. Nam aliquam sem et tortor consequat id porta. Massa vitae tortor condimentum lacinia quis vel eros. Amet justo donec enim diam vulputate ut pharetra sit amet. Tortor at risus viverra adipiscing at in tellus. In vitae turpis massa sed elementum tempus egestas. Lobortis mattis aliquam faucibus purus. Dolor sed viverra ipsum nunc aliquet bibendum enim.Quam viverra orci sagittis eu volutpat odio. Dui nunc mattis enim ut tellus elementum sagittis vitae. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Egestas dui id ornare arcu. Nibh sed pulvinar proin gravida hendrerit. Convallis posuere morbi leo urna molestie at elementum eu. Molestie at elementum eu facilisis sed. Bibendum ut tristique et egestas. Nunc sed blandit libero volutpat sed cras ornare arcu. Elit pellentesque habitant morbi tristique senectus et netus. Purus sit amet luctus venenatis lectus magna fringilla.</p>
+        </div>
+        <div id="reservation" class="contents">
+            <h2>예약 방법 및 요금</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non tellus orci ac auctor augue mauris augue. Elementum nisi quis eleifend quam adipiscing. Massa massa ultricies mi quis hendrerit. Proin sagittis nisl rhoncus mattis rhoncus. Tellus rutrum tellus pellentesque eu. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Tellus integer feugiat scelerisque varius morbi enim. Pretium lectus quam id leo in vitae turpis massa. Vivamus arcu felis bibendum ut. Arcu felis bibendum ut tristique et egestas quis. Nam aliquam sem et tortor consequat id porta. Massa vitae tortor condimentum lacinia quis vel eros. Amet justo donec enim diam vulputate ut pharetra sit amet. Tortor at risus viverra adipiscing at in tellus. In vitae turpis massa sed elementum tempus egestas. Lobortis mattis aliquam faucibus purus. Dolor sed viverra ipsum nunc aliquet bibendum enim.Quam viverra orci sagittis eu volutpat odio. Dui nunc mattis enim ut tellus elementum sagittis vitae. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Egestas dui id ornare arcu. Nibh sed pulvinar proin gravida hendrerit. Convallis posuere morbi leo urna molestie at elementum eu. Molestie at elementum eu facilisis sed. Bibendum ut tristique et egestas. Nunc sed blandit libero volutpat sed cras ornare arcu. Elit pellentesque habitant morbi tristique senectus et netus. Purus sit amet luctus venenatis lectus magna fringilla.</p>
+        </div>
+    </div>
+</body>
+</html>
