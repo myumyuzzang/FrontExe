@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: minmax(100px, auto); /*줄 높이 최소 100px*/
+        }
+        .items{
+            padding: 10px;
+            background-color: #eee;
+        }
+        .items:nth-child(odd){
+            background-color: #bbb;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items">Lorem ipsum dolor sit amet, consectetur  Odio aenean sed adipiscing diam donec.</div>
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipiscing elit Mauris a diam maecenas sed enim ut sem. Pharetra massa massa ultricies mi quis hendrerit dolor magna eget. Leo duis ut diam quam nulla. </div>
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipiscing elit Mauris a diam maecenas sed enim ut sem. hendrerit dolor Purus Fames ac turpis egestas sed tempus.</div>
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  </div>
+        <div class="items">Lorem ipsum dolor sit amet</div>
+    </div>
+    
+</body>
+</html>
