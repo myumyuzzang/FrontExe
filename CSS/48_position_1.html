@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width:500px;
+            height:200px;
+            background-color: #eee;
+            border:1px solid #ccc;
+            line-height: 2;
+        }
+        #static{
+            position:static;
+            border:3px solid red;
+        }
+        #relative-1{
+            position:relative;
+            border:3px solid gold;
+        }
+        #relative-2{
+            position:relative;
+            left:100px;
+            top:-50px;
+            border:3px solid blue;
+        }
+        #fixed{
+            width:300px;
+            height:400px;
+            background:url('../images/cat.jpg');
+            position:fixed;
+            right:30px;
+            top:30px;
+        }
+    </style>
+</head>
+<!-- 
+    [position]
+    static     : 기본값, 문서의 흐름에 맞춰 배치
+    relative   : static과 동일하지만, 위치값을 지정 가능
+    absolute   : relative를 사용한 상위 요소를 기준으로 위치값을 지정
+    fixed      : 브라우저 창을 기준으로 위치 지정
+
+ -->
+<body>
+    <p id="static">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas congue quisque egestas diam in arcu cursus. Tristique nulla aliquet enim tortor at auctor. Fermentum et sollicitudin ac orci. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus.</p>
+    <p id="relative-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris pharetra et ultrices neque. Nibh tellus molestie nunc non blandit massa enim. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Lobortis feugiat vivamus at augue eget arcu dictum.</p>
+    <p id="relative-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p id="fixed"></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectus mauris ultrices eros. Sed adipiscing diam donec adipiscing tristique risus. Consectetur purus ut faucibus pulvinar. Et tortor consequat id porta nibh venenatis cras.</p>
+</body>
+</html>
