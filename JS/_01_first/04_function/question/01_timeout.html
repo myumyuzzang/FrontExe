@@ -10,8 +10,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #output{
+            width: 600px;
+            height: 200px;
+            border: 4px solid black;
+            margin: 50px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            vertical-align: middle;
+        }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            let $output = document.querySelector('#output');
+
+            setTimeout(() => {
+                $output.textContent = '안녕하세요. 환영합니다.';
+            }, 3000);
+        //     let count = 0;
+
+        //     let intervalId = setInterval(function() {
+        //     if (count < 3) {
+        //         $output.textContent = ++count;
+        //     } else {
+        //         clearInterval(intervalId); // 3초가 지나면 타이머 종료
+        //         $output.textContent = "안녕하세요. 환영합니다.";
+        //     }
+        // }, 1000);
+    });
+
+    </script>
 </head>
 <body>
-    
+    <div id="output"></div>
 </body>
 </html>
