@@ -4,3 +4,87 @@
 
 '시작' 버튼을 누르면 물고기가 자동으로 왕복 움직이도록
 '멈춤' 버튼을 누르면 물고기가 멈추도록 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel{
+            width: 600px;
+            height: 300px;
+            border: 1px solid #999;
+            position: relative;
+        }
+        #bar{
+            position: absolute;
+            left: 50px;
+            top: 190px;
+            width: 500px;
+            height: 20px;
+            background-color: #f30;
+        }
+        #fish{
+            position: absolute;
+            left: 50px;
+            top: 120px;
+        }
+        #nav{
+            margin-top: 20px;
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            let $fish = document.querySelector('#fish');
+            const step_val = 50;
+            let step = step_val;
+            const max_x = 430;
+            const min_x = 50;
+            let timerID = null;
+            const INTERVAL = 100;
+
+            let $btnStart = document.querySelector('#btnStart');
+            let $btnStop = document.querySelector('#btnStop');
+
+            $btnStart.addEventListener('click', () => {
+                // 타이머가 작동하면 추가로 동작하지 못하도록
+                if (timerID !== null)
+                    return;
+                timerID = setInterval(() => {
+                    let x = $fish.getBoundingClientRect().left + step;
+
+                    if (x >= max_x){
+                        x = max_x;
+                        $fish.setAttribute('src', '../../../../images2/fish2.png')
+                        step = -step_val;
+                    }else if(x < min_x){
+                        x = min_x;
+                        $fish.setAttribute('src', '../../../../images2/fish1.png')
+                        step = step_val;
+                    }
+                    $fish.style.left = x + 'px';
+                }, INTERVAL);
+            })
+            $btnStop.addEventListener('click', () => { 
+                // 타이머가 동작하지 않는다면 멈출 필요 없음
+                if(timerID === null)
+                    return;
+
+                clearInterval(timerID);
+                timerID = null;
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="panel">
+        <img src="../../../../images2/fish.png" id="fish">
+        <div id="bar"></div>
+    </div>
+    <button id="btnStart">시작</button>
+    <button id="btnStop">멈춤</button>
+</body>
+</html>

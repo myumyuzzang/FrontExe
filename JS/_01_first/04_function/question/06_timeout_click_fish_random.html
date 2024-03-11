@@ -1,7 +1,9 @@
 <!-- 물고기를 상자에 띄우고
 물고기를 5초안에 최대한 클릭할 것
 클릭한 횟수가 상자위에 출력될 것
-5초가 지나면 더 이상 클릭횟수 증가X -->
+5초가 지나면 더 이상 클릭횟수 증가X 
+
+물고기는 0.2초마다 위치를 옮겨다닐 것-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +16,7 @@
             height: 400px;
             border: 2px solid black;
             position: relative;
+            overflow: hidden; /* 추가: 패널 내부에만 보이도록 함 */
         }
         .panel #fish{
             position: absolute;
@@ -28,6 +31,8 @@
             let isPlaying = true;
             let $score = document.querySelector('#score');
             let $fish = document.querySelector('#fish');
+            const MOVE_INTERVAL = 500; // 물고기 이동 간격
+            let $panel = document.querySelector('.panel');
 
             $fish.addEventListener('click', () =>{
                 if(isPlaying){
@@ -35,8 +40,26 @@
                 }
             });
 
+            // 물고기 위치를 주기적으로 업데이트
+            function movefish() {
+                const panelWidth = $panel.clientWidth; // 패널의 가로 크기
+                const panelHeight = $panel.clientHeight; // 패널의 세로 크기
+                const fishWidth = $fish.clientWidth; // 물고기 이미지의 가로 크기
+                const fishHeight = $fish.clientHeight; // 물고기 이미지의 세로 크기
+
+                //새로운 물고기의 좌표 생성
+                const newLeft = Math.floor(Math.random() * (panelWidth - fishWidth));
+                const newTop = Math.floor(Math.random() * (panelHeight - fishHeight));
+
+                $fish.style.left = newLeft + 'px';
+                $fish.style.top = newTop + 'px';
+            }
+
+            const fishMoveInterval = setInterval(movefish, MOVE_INTERVAL);
+
             setTimeout(() =>{
                 isPlaying = false;
+                clearInterval(fishMoveInterval); //이동간격 함수 정지
                 alert('게임이 종료되었습니다.');
             }, INTERVAL);
         });
