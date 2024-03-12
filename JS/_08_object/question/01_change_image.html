@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            width: 400px;
+            height: 200px;
+            top: 10px;
+            left: 100px;
+            position: absolute;
+            border: 3px solid red;
+            box-shadow: 10px 10px #ccc;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var banner = document.getElementById("banner1");
+            var currentIndex = 1;
+            var interval = 1000; // 초기 교체 간격 1초
+
+            function changeImage() {
+                banner.src = `../../../images2/logo_0${currentIndex}.jpg`;
+                currentIndex = (currentIndex % 8) + 1;
+            }
+
+            var timer = setInterval(changeImage, interval);
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowUp") {
+                    // 방향키 상을 누를 경우 교체 속도 빨라짐
+                    interval = Math.max(100, interval - 100);
+                } else if (event.key === "ArrowDown") {
+                    // 방향키 하를 누를 경우 교체 속도 느려짐
+                    interval += 100;
+                }
+
+                // 기존 타이머 제거 후 새로운 타이머 설정
+                clearInterval(timer);
+                timer = setInterval(changeImage, interval);
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="../../../images2/logo_01.jpg" class="banner" id="banner1"/>
+</body>
+</html>

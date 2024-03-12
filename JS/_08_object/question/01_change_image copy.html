@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            width: 400px;
+            height: 200px;
+            top: 10px;
+            left: 100px;
+            position: absolute;
+            border: 3px solid red;
+            box-shadow: 10px 10px #ccc;
+        }
+    </style>
+    <script>
+        let banner = function(selector, imgList, cb_set_speed){
+            let currentIndex = 1;
+            let $banner = document.querySelector(selector);
+            let speed = cb_set_speed();
+            let timerID = null;
+
+            timerID = setInterval(() =>{
+                let imgName = imgList[currentIndex++];
+                if(currentIndex >= imgList.lenght)
+                    currentIndex = 0;
+            })
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let timerID = null;
+            let speed = 1000;       // 1초
+            let imagesList = [
+            'logo_01.jpg', 'logo_02.jpg', 'logo_03.jpg', 'logo_04.jpg', 
+            'logo_05.jpg', 'logo_06.jpg', 'logo_07.jpg', 'logo_08.jpg', 
+            ];
+
+            timerID = banner('#banner1', imagesList, () => speed);
+
+            document.addEventListener('keydown', function(e){
+                let isChange = false;
+                const UP_KEY = 38, DOWN_KEY = 40;
+                const CHANGE_SPEED = 100;
+                const MIN_SPEED = 100, MAX_SPEED = 2000;
+
+                switch(e.keyCode) {
+                    case UP_KEY:
+                        speed -= CHANGE_SPEED;
+                        speed = speed < MIN_SPEED ? MIN_SPEED : speed;
+                        break;
+                    case DOWN_KEY:
+                        speed += CHANGE_SPEED;
+                        speed = speed > 2000 ? 2000 : speed;
+                        break;
+                }
+                if(isChange) {
+                    clearInterval(timerID);
+                    timerID = banner('#banner1', imagesList, () => speed)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="../../../images2/logo_01.jpg" class="banner" id="banner1"/>
+</body>
+</html>
