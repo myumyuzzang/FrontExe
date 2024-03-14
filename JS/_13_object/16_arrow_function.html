@@ -18,22 +18,21 @@
         //     상위 스코프의 this를 가져온다.
         //     가장 큰 차이점은 this다.
 
-        class Prefixer{
-            constructor(Prefixer){
-                this.prefixer = prefixer
+        class Prefixer {
+            constructor(prefix){
+                this.prefix = prefix;
             }
-
             add(arr){
-                // 콜백 함수 === 일반 함수로 동작, this === window
+                // 콜백함수 === 일반 함수로 동작, this === window
                 return arr.map(function(item){
-                    // Uncaught ReferenceError: Cannot access 'prefixer' before initialization
-                    return this.prefixer + item;
+                    // Uncaught TypeError: Cannot read properties of undefined (reading 'prefix')
+                    return this.prefix + item;
                 });
             }
-        }
+       }
 
-        const prefixer = new Prefixer('-webkit');
-        console.log(prefixer.add(['tasition', 'user-select']))
+        const prefixer = new Prefixer('-webkit-');
+        console.log(prefixer.add(['trasition', 'user-select']));
     </script>
 </head>
 <body>
